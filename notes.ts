@@ -335,6 +335,17 @@ const randomDude = (person: IsPerson) => {
 
 randomDude(me);
 
+interface IState{
+  people: {
+    name: string,
+    url: string,
+    quote: string
+    note?: string
+  }[] <---- this has to be defined, to show that the "people" property is an array of objects.
+}  
+
+const [people, setPeople] = useState<IState["people"]>([]);
+
 
 ----------------------------------------------------------------------------
 TypeScript Tutorial #16 - Interfaces with Classes
